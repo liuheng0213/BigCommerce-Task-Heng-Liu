@@ -24,7 +24,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value =Exception.class)
 	@ResponseBody
 	public ResultBody exceptionHandler(Exception e){
-		logger.error("unknown exception:",e);
+		logger.error("an exception occurs :",e.toString());
 		return ResultBody.error("500",e.getMessage());
 	}
 
