@@ -8,6 +8,13 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
 
 1 start Mysql 
 
+	1.1 create a db called bigcommerce  
+	1.2 set username of mysql connection to be 'stephen' 
+	1.2 set password of mysql connection to be '83603919' 
+	
+	or: open application.properties
+	you can directly change configs above, according to your own mysql configs on your computer
+	
 2 open two sql files : sql/t_customer.sql as well as sql/t_order.sql
   run all sentences in these two files to add test data
   
@@ -25,9 +32,9 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
   http://localhost:8000/bigcommerce/customer/orderLifeValue/1
    
    
-  test3: if a wrong parameter is sent , see the exception result
+  test3: if a wrong customer_id is sent , see the exception result
   http://localhost:8000/bigcommerce/customer/orderLifeValue/1XX
    
    
  5: com.BigCommerce.ApplicationTest.java
-    this is the test case java file 
+    this is about the unit tests 
