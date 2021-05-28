@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.BigCommerce.task.hengLiu.mapper.CustomerMapper">
+
+    <select id="selectCustomers" resultMap="CusOrderCountResultMap">
+        select DISTINCT(c.id) cid,c.company,c.date_created,c.date_modified,c.first_name,
+        c.last_name,c.email,c.phone,temp.count
+        from t_customer c join t_order o on c.id = o.customer_id
+        join (select count(*) count from t_order) temp order by cid;
+    </select>
+
+    <resultMap id="CusOrderCountResultMap" type="com.BigCommerce.task.hengLiu.dto.CustomersDTO">
+
+        <result property="totalOrderNumber" column="count"/>
+
+        <collection property="cusList" ofType="com.BigCommerce.task.hengLiu.po.Customer">
+            <result property="id" column="cid"/>
+            <result property="company" column="company"/>
+            <result property="dateCreated" column="date_created"/>
+            <result property="dateModified" column="date_modified"/>
+            <result property="firstName" column="first_name"/>
+            <result property="lastName" column="last_name"/>
+            <result property="email" column="email"/>
+            <result property="phone" column="phone"/>
+        </collection>
+    </resultMap>
+
+
+
+
+    <select id="getCustomerOrdersDTO" resultMap="CusOrderDetailResultMap">
+      select c.id cid,c.date_created,c.date_modified,c.company,c.first_name,c.last_name,c.email,c.phone,o.id oid,o.date_created order_date_created,o.total_inc_tax,o.customer_id,o.status,o.status_id,o.cart_id,o.customer_locale,o.is_deleted,temp.totalValue
+      from t_customer c  join t_order o on c.id = o.customer_id
+      join (select customer_id,sum(total_inc_tax) totalValue from t_order where customer_id = #{cid}) temp
+      on temp.customer_id = c.id
+    </select>
+
+    <resultMap id="CusOrderDetailResultMap" type="com.BigCommerce.task.hengLiu.dto.CustomerOrdersDTO">
+
+        <result property="id" column="cid"/>
+        <result property="dateCreated" column="date_created"/>
+        <result property="dateModified" column="date_modified"/>
+        <result property="company" column="company"/>
+        <result property="firstName" column="first_name"/>
+        <result property="lastName" column="last_name"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="lifeTimeValue" column="totalValue"/>
+
+        <collection property="orderList" ofType="com.BigCommerce.task.hengLiu.po.Order">
+            <result property="id" column="oid"/>
+            <result property="totalIncTax" column="total_inc_tax"/>
+            <result property="dateCreated" column="order_date_created"/>
+            <result property="customerId" column="customer_id"/>
+            <result property="status" column="status"/>
+            <result property="statusId" column="status_id"/>
+            <result property="cartId" column="cart_id"/>
+            <result property="customerLocale" column="customer_locale"/>
+            <result property="isDeleted" column="is_deleted"/>
+        </collection>
+    </resultMap>
+
+</mapper>

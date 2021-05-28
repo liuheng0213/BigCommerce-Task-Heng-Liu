@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!--this is mapper generator file which can automatically generate entity and mapper matched with DB-->
+
+    <!--the path of mysql connector jar-->
+    <classPathEntry location="D:\openSources\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar"/>
+    <context id="context1">
+
+        <!-- whether to generate a comment-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- DB information-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/bigcommerce?serverTimezone=GMT%2B8"
+                        userId="stephen" password="83603919" />
+
+        <!-- generate packdge name as well as project name -->
+        <javaModelGenerator targetPackage="com.BigCommerce.task.hengLiu.po"
+                            targetProject="src/main/java/"/>
+        <!-- xml mapping files   -->
+        <sqlMapGenerator targetPackage="mapping"
+                         targetProject="src/main/resources/" />
+        <!--  mapper    -->
+        <javaClientGenerator targetPackage="com.BigCommerce.task.hengLiu.mapper"
+                             targetProject="src/main/java/" type="XMLMAPPER" />
+
+
+        <table  tableName="t_customer" domainObjectName="Customer"
+                enableCountByExample="false"
+                enableUpdateByExample="false"
+                enableDeleteByExample="false"
+                enableSelectByExample="false"
+                selectByExampleQueryId="false">
+
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
+        <table  tableName="t_order" domainObjectName="Order"
+                enableCountByExample="false"
+                enableUpdateByExample="false"
+                enableDeleteByExample="false"
+                enableSelectByExample="false"
+                selectByExampleQueryId="false">
+
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
