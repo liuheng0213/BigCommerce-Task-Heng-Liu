@@ -32,8 +32,10 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
 4 TEST APIS
 
   open chrome or other explorer
+  
   test1:  A list of Customers, including the total number of orders they have placed
   http://localhost:8000/bigcommerce/customer/totalOrderNumber
+  
   
   
   
@@ -42,11 +44,13 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
   http://localhost:8000/bigcommerce/customer/orderLifeValue/1
    
    
+   
   test3: if a wrong customer_id is sent , see the exception result
   http://localhost:8000/bigcommerce/customer/orderLifeValue/1XX
    
    
  5: UNIT TESTS 
+ 
  
     open com.BigCommerce.ApplicationTest.java
     this is about the unit tests  run those three method one by one
