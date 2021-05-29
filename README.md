@@ -1,4 +1,4 @@
-# java-bigCommerce-task
+# BigCommerce-Task-Heng-Liu
 it is interview task from Bigcommerce
 
 ## Prerequisites
