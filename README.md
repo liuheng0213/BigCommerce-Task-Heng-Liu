@@ -20,14 +20,17 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
 		
 	
 2 ADD TEST DATA IN DB
+
   open two sql files : sql/t_customer.sql as well as sql/t_order.sql
   run all sentences in these two files to add test data
   
 3 START SERVER(TOMCAT)
+
     3.1 open com.BigCommerce.task.hengLiu.Application.java
     3.2 and run this java(by clicking the green triangle sign) , wait for about 10 seconds till tomcat starts
 	
 4 TEST APIS
+
   open chrome or other explorer
   test1:  A list of Customers, including the total number of orders they have placed
   http://localhost:8000/bigcommerce/customer/totalOrderNumber
@@ -44,5 +47,6 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
    
    
  5: UNIT TESTS 
+ 
     open com.BigCommerce.ApplicationTest.java
     this is about the unit tests  run those three method one by one
