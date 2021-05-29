@@ -1,5 +1,5 @@
 # BigCommerce-Task-Heng-Liu
-it is interview task from Bigcommerce
+it is an interview task from Bigcommerce, in which framework I used is spring boot + mybatis
 
 ## Prerequisites
 Mysql 5.7 ; IntelliJ IDEA; Chrome
