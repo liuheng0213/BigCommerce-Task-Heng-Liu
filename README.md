@@ -14,7 +14,7 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
 		spring.datasource.username=stephen
 		spring.datasource.password=83603919
 		
-	    you can directly change configs above, according to your own mysql configs on your computer as following
+	     directly change configs above, according to your own mysql configs on your computer as following
 		spring.datasource.username=your-db-username
 		spring.datasource.password=your-db-password
 		
@@ -22,6 +22,7 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
 2 ADD TEST DATA IN DB
 
   open two sql files : sql/t_customer.sql as well as sql/t_order.sql
+  open the db: bigcommerce
   run all sentences in these two files to add test data
   
 3 START SERVER(TOMCAT)
