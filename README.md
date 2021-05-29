@@ -2,7 +2,7 @@
 it is an interview task from Bigcommerce, in which framework I used is spring boot + mybatis
 
 ## Prerequisites
-Mysql 5.7 ; IntelliJ IDEA; Chrome
+Mysql 5.7 ; IntelliJ IDEA(not the community version, because it does not have tomcat); Chrome or other explorers
 
 ### Run
 
@@ -32,21 +32,26 @@ Mysql 5.7 ; IntelliJ IDEA; Chrome
 	
 4 TEST APIS
 
-  open chrome or other explorer
+  open chrome or other explorers
   
-  test1:  A list of Customers, including the total number of orders they have placed
+  test1: 
+  A list of Customers, including the total number of orders they have placed
+  run this address:
   http://localhost:8000/bigcommerce/customer/totalOrderNumber
   
   
   
   
-  test2:  A Customer Details screen that displays the Order History for that Customer
-         and their Lifetime Value (defined as the total value of all of their orders)
+  test2:  
+  A Customer Details screen that displays the Order History for that Customer
+  and their Lifetime Value (defined as the total value of all of their orders)
+  run this address:
   http://localhost:8000/bigcommerce/customer/orderLifeValue/1
    
    
    
   test3: if a wrong customer_id is sent , see the exception result
+  run this address:
   http://localhost:8000/bigcommerce/customer/orderLifeValue/1XX
    
    
